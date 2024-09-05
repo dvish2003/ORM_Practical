@@ -1,6 +1,7 @@
 package lk.ijse.config;
 
-import lk.ijse.entity.Food;
+import lk.ijse.Entity.Address;
+import lk.ijse.Entity.Customer_entity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,7 +13,9 @@ public class FactoryConfiguration {
 
 
     private FactoryConfiguration() {
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Food.class);
+        Configuration configuration = new Configuration().configure()
+                .addAnnotatedClass(Address.class)
+        .addAnnotatedClass(Customer_entity.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 
